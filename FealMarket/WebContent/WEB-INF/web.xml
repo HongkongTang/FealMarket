@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>edu.sdut.web.fliter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+    <filter-name>PowerFilter</filter-name>
+    <filter-class>edu.sdut.web.fliter.PowerFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>PowerFilter</filter-name>
+    <url-pattern>/fe/jsp/shopcart.jsp</url-pattern>
+    <url-pattern>/fe/jsp/pay.jsp</url-pattern>
+    <url-pattern>/CartServlet</url-pattern>
+    <url-pattern>/OrderServlet</url-pattern>
+  </filter-mapping>
+  
+  
+  
+  <display-name>FealMarket</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/500.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
+  </error-page>
+  <servlet>
+    <servlet-name>productServlet</servlet-name>
+    <servlet-class>edu.sdut.web.servlet.HomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>productServlet</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+</web-app>
